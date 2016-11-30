@@ -1,0 +1,26 @@
+.app-p-aside {
+  /*max-height: ~"calc(100vh - 50px)";*/
+  background-color: #dadada;
+  margin-left: -400px;
+  width: 400px;
+  transition: margin-left 0.5s;
+  .aside-header {
+    background-color: #e7e7e7;
+    height: 20px;
+    i {
+      color: #666666;
+    }
+  }
+  .aside-content {
+    width: 100%;
+    padding: 50px 10%;
+    display: block;
+  }
+  &.in {
+    margin-left: 0px;
+  }
+  &:not(.in) .modal-dialog {
+    -webkit-transform: translate3d(-60%, 0, 0);
+    transform: translate3d(-60%, 0, 0);
+  }
+}

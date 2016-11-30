@@ -1,0 +1,13 @@
+<div class="homepage">
+  <div class="menu">
+    <a *ngFor="let option of menuOptions"
+       routerLink="/{{option.route}}"
+         class="menu-option col-md-4">
+      <div class="option-content">
+        <i class="glyphicon  {{option.icon}}"></i>
+        <h5>{{option.name}}</h5>
+      </div>
+    </a>
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-4">
+    <div class="loginSection form-group">
+      <br>
+      <label>Login:</label>
+      <input [(ngModel)]="login" type="text" class="form-control" autocomplete="true"/>
+      <label>Password:</label>
+      <input [(ngModel)]="password" type="password" class="form-control" autocomplete="true"/>
+    </div>
+    <button (click)="logInUser()" class="btn btn-primary">
+      <span>login</span>
+    </button>
+  </div>
+  <div class="col-md-7">
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+<div [ngClass]="{'in':!asideService.collapsed}" class="app-p-aside">
+  <div class="aside-header">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+    </div>
+    <div class="col-md-1">
+      <i class="glyphicon glyphicon-menu-left"></i>
+    </div>
+  </div>
+
+  <app-p-dynamic class="aside-content"[componentData]="asideService.componentData"></app-p-dynamic>
+</div>

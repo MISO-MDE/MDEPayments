@@ -1,0 +1,10 @@
+/RemoteSystemsTempFiles/
+.idea/
+.metadata/
+
+*Frontend/node_modules
+*Backend/PilaPayments/bin
+*Backend/PilaPayments/.settings
+*Backend/PilaPayments/target
+
+*Backend/.recommenders

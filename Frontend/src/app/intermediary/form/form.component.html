@@ -1,0 +1,41 @@
+<div class="intermediary-form">
+  <div class="form-group">
+    <h4>Empresa aportante</h4>
+    <label>NIT</label>
+    <input [(ngModel)]="businessService.selectedRow.nit" type="text" class="form-control"/>
+    <label>Nombre</label>
+    <input [(ngModel)]="businessService.selectedRow.name" type="text" class="form-control"/>
+    <label>Actividad Económica</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.actividadeconomica">
+      <option *ngFor="let option of  actividadeconomica" [value]="option.id">{{option.descripcion}}</option>
+    </select>
+
+    <label>Tipo de pagador</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.tipoPagador">
+      <option *ngFor="let option of  tipopagador" [value]="option.id">{{option.descripcion}}</option>
+    </select>
+    <br>
+    <!--Informacion del Administrador del la superentidad-->
+    <h4>Administrador</h4>
+    <label>Email</label>
+    <input [disabled]="businessService.isEditingRow()" [(ngModel)]="userAdmin.email" type="email" class="form-control"/>
+    <label>Contraseña</label>
+    <input [disabled]="businessService.isEditingRow()" [(ngModel)]="userAdmin.password" type="password" class="form-control"/>
+    <label>Nombre</label>
+    <input [disabled]="businessService.isEditingRow()" [(ngModel)]="userAdmin.name" type="text" class="form-control"/>
+    <br>
+  </div>
+  <div class="text-right">
+    <button  *ngIf="!businessService.isEditingRow()" (click)="saveSuperEntity()" class="btn btn-primary">
+      <span>Crear</span>
+    </button>
+    <button  *ngIf="businessService.isEditingRow()" (click)="updateSuperEntity()" class="btn btn-warning">
+      <span>Actualizar</span>
+    </button>
+    <button  *ngIf="businessService.isEditingRow()" (click)="cancel()" class="btn btn-default">
+      <span>Cancelar</span>
+    </button>
+  </div>
+</div>

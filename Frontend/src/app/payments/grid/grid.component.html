@@ -1,0 +1,25 @@
+<div class="intermediary">
+  <h4 class="section-title">
+    <i class="glyphicon glyphicon-usd"></i>
+    <span>Lista de pagos</span>
+  </h4>
+  <table class="table dataTable table-striped table-bordered" border="1px">
+    <thead>
+    <tr>
+      <td *ngFor="let column of businessService.columns"><h5>{{column.title}}</h5></td>
+      <td><h5></h5></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of businessService.rows">
+      <td *ngFor="let column of businessService.columns">{{getRowData(row,column.name)}}</td>
+      <td>
+        <button (click)="editRow(row)" class="btn btn-primary">
+          <i class="glyphicon glyphicon-pencil"></i>
+          <span>Detalle</span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,64 @@
+<div class="payment-form">
+  <div class="form-group">
+    <h4>Pagos</h4>
+    <label>Cédula</label>
+    <input [(ngModel)]="businessService.selectedEntity.cedula" type="text" class="form-control" (blur)="getEntity()"/>
+    <br><br>
+    <div class="currency-group">
+      <label>Nombres:</label>
+      <label class="currency-field">{{businessService.selectedEntity.nombre}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Apellidos:</label>
+      <label class="currency-field">{{businessService.selectedEntity.apellido}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Salario:</label>
+      <label class="pull-right currency-field">{{businessService.selectedEntity.salario | currency:'USD':true}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Subtotal EPS:</label>
+      <label class="pull-right currency-field">{{businessService.selectedRow.subTotal1 | currency:'USD':true}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Subtotal Pension:</label>
+      <label class="pull-right currency-field">{{businessService.selectedRow.subTotal2 | currency:'USD':true}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Subtotal Riesgos:</label>
+      <label class="pull-right currency-field">{{businessService.selectedRow.subTotal3 | currency:'USD':true}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Total:</label>
+      <label class="pull-right currency-field">{{businessService.selectedRow.amount | currency:'USD':true}}</label>
+    </div>
+    <br>
+  </div>
+  <div class="text-right">
+    <button (click)="calculatePayment()" class="btn btn-primary">
+      <span>Calcular Pago</span>
+    </button>
+    <br>
+    <br>
+    <table *ngIf="showValidations" class="table dataTable table-striped table-bordered" border="1px">
+      <thead>
+      <tr>
+        <td *ngFor="let column of columns"><h5>{{column.title}}</h5></td>
+        <td><h5></h5></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let column of columns">{{getRowData(row,column.name)}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

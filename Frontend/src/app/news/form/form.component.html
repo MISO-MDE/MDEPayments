@@ -1,0 +1,42 @@
+<div class="new-form">
+  <div class="form-group">
+    <h4>Pensionado</h4>
+    <label>Cédula</label>
+    <input [(ngModel)]="businessService.selectedEntity.cedula" type="text" class="form-control" (blur)="getEntity()"/>
+    <br><br>
+    <div class="currency-group">
+      <label>Nombres:</label>
+      <label class="currency-field">{{businessService.selectedEntity.nombre}}</label>
+    </div>
+    <br>
+    <div class="currency-group">
+      <label>Apellidos:</label>
+      <label class="currency-field">{{businessService.selectedEntity.apellido}}</label>
+    </div>
+    <br>
+    <h4>Novedad</h4>
+    <label>Tipo de novedad</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.tipoNovedad">
+      <option *ngFor="let option of  tipoNovedad" [value]="option.id">{{option.name}}</option>
+    </select>
+    <label>Fecha inicial</label>
+    <input [(ngModel)]="businessService.selectedRow.fechaInicial" type="date" class="form-control"/>
+    <label>Fecha final</label>
+    <input [(ngModel)]="businessService.selectedRow.fechaFinal" type="date" class="form-control"/>
+    <label>Días hábiles</label>
+    <input [(ngModel)]="businessService.selectedRow.diasHabiles" type="number" class="form-control  text-right"/>
+  </div>
+
+ <!-- <div class="form-group">
+    <h4></h4>
+    <label>Variación temporal del salario</label>
+    <input [(ngModel)]="businessService.selectedRow.variacionSalario" type="text" class="form-control"/>
+  </div>-->
+
+  <div class="text-right">
+    <button (click)="saveNews()" class="btn btn-primary">
+      <span>Crear</span>
+    </button>
+  </div>
+</div>

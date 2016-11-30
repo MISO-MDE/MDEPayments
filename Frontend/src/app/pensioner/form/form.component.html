@@ -1,0 +1,68 @@
+<div class="pensioner-form">
+  <div class="form-group">
+    <h4>Pensionado</h4>
+    <!-- Field type: text -->
+    <label>Cédula</label>
+    <input [(ngModel)]="businessService.selectedRow.cedula" type="text" class="form-control"/>
+
+    <!-- Field type: text -->
+    <label>Nombres</label>
+    <input [(ngModel)]="businessService.selectedRow.nombre" type="text" class="form-control"/>
+
+    <!-- Field type: text -->
+    <label>Apellidos</label>
+    <input [(ngModel)]="businessService.selectedRow.apellido" type="text" class="form-control"/>
+
+    <!-- Field type: select -->
+    <label>Tipo de pension</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.tipoPension">
+      <option  value="0" ></option>
+      <option *ngFor="let option of  getPensionOptions()" [value]="option.id" [disabled]="!option.status">{{option.descripcion}}</option>
+    </select>
+
+    <!-- Field type: select -->
+    <label>Tipo de pensionado</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.tipoPensionado">
+      <option  value="0" ></option>
+      <option *ngFor="let option of  getPensionerOptions()" [value]="option.id" [disabled]="!option.status">{{option.descripcion}}</option>
+    </select>
+
+    <!-- Field type: select -->
+    <label>Pais de residencia</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.pais">
+      <option *ngFor="let option of  countryOptions" [value]="option.id">{{option.name}}</option>
+    </select>
+
+    <!-- Field type: select -->
+    <label>Residencia grupo familiar</label>
+    <select class="form-control"
+            [(ngModel)]="businessService.selectedRow.paisGrupoFamiliar">
+      <option *ngFor="let option of  countryOptions" [value]="option.id">{{option.name}}</option>
+    </select>
+
+    <!-- Field type: text -->
+    <label>Profesión</label>
+    <input [(ngModel)]="businessService.selectedRow.profesion" type="text" class="form-control"/>
+
+    <!-- Field type: number -->
+    <label>Salario</label>
+    <input [(ngModel)]="businessService.selectedRow.salario" type="number" class="form-control text-right"/>
+  </div>
+
+  <div class="text-right">
+    <!-- Action type: save -->
+    <button *ngIf="!businessService.isEditingRow()" (click)="save()" class="btn btn-primary">
+      <span>Crear</span>
+    </button>
+
+    <!-- Action type: update -->
+    <button *ngIf="businessService.isEditingRow()" (click)="update()" class="btn btn-warning">
+      <span>Actualizar</span>
+    </button>
+  </div>
+</div>
+
+

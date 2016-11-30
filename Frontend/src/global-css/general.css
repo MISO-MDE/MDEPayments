@@ -1,0 +1,87 @@
+/*
+ * General css
+ * Payments MDE
+ */
+body {
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #eee;
+}
+.payments-project .form-group label {
+  margin-bottom: 2px;
+  font-weight: 200;
+  color: #3a3939;
+  margin-top: 8px;
+}
+
+.payments-project .form-group .form-control {
+  border-radius: 2px;
+}
+
+.payments-project .table-bordered {
+  background-color: #e7e7e7;
+}
+
+.payments-project .table-bordered .btn i {
+  margin-right: 8px;
+}
+
+.payments-project .section-title i {
+  margin-right: 8px;
+}
+
+.payments-project .ripple {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.payments-project .ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  animation: ripple-animation 2.5s;
+}
+
+.payments-project .currency-group .currency-field {
+  font-weight: bold;
+  text-shadow: 0px 0px 0px rgb(6, 42, 72);
+}
+
+.payments-project .currency-group {
+  background-color: #e7e7e7;
+  padding: 5px 7px 5px 4px;
+}
+.payments-project select option {
+  color: #062d16;
+  cursor: pointer;
+  background-color: #f8fff4;
+}
+
+.payments-project select option:hover {
+  cursor: pointer;
+}
+
+
+.payments-project select option:disabled {
+  color: #858585;
+  cursor: no-drop;
+  background-color: #fff2de;
+}
+
+.payments-project select option:disabled:hover {
+  cursor: no-drop;
+}
+@keyframes ripple-animation {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(100);
+    opacity: 0;
+  }
+}
